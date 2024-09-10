@@ -30,18 +30,18 @@
               <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if url_name == 'user_profile' %}active{% endif %}" aria-current="page" href="{% url 'user_profile' %}">My Profile</a>
+              <a class="nav-link {% if url_name == 'user_profile' %}active{% endif %}" aria-current="page" href="{% url 'user_profile' %}">Il mio profilo</a>
             </li>
 
             {% if user.is_authenticated and user.is_superuser %}
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Admin
+                Amministrazione
               </a>
               <ul class="dropdown-menu">
                 <li class="dropdown-item">
                   <a href="{% url 'user_list' %}" class="nav-link {% if url_name == 'user_list' %}active{% endif %}"
-                    aria-disabled="true">Users</a>
+                    aria-disabled="true">Gestisci utenti</a>
                 </li>
               </ul>
             </li>

@@ -5,10 +5,9 @@
 <div class="container" style="max-width: 600px;">
     <div class="card">
         <div class="card-body">
-            <h2>{% block title %}Default Title{% endblock %}</h2>
-            <p>{% block description %}Default Description{% endblock %}</p>
+            <h2>{% block title %}{% endblock %}</h2>
+            <p>{% block description %}{% endblock %}</p>
             {% block inner_content %}
-
             {% endblock %}
         </div>
     </div>

@@ -1,8 +1,15 @@
 <!-- templates/account/login.html -->
+{% extends "layouts/form_card.html" %}
 {% load allauth account %}
 
-{% block content %}
-{% include "layouts/form_card.html" with title="Sign in" button_label="Accedi" %}
+{% block title %}
+Login
 {% endblock %}
 
+{% block card_title %}
+Login
+{% endblock %}
 
+{% block button_label %}
+Accedi
+{% endblock %}

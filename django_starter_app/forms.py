@@ -2,25 +2,24 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-
-class UserEditForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ['username', 'email', 'first_name', 'last_name']
+from django.contrib.auth.password_validation import password_validators_help_texts
 
 
 class UserCreateForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ['username', 'email', 'first_name', 'last_name']
+        fields = ['username', 'email']
         
+class UserEditForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email']
         
-        
-class AdminUserEditForm(forms.ModelForm):
+class UserEditFormWithPassword(forms.ModelForm):
     password = forms.CharField(
         widget=forms.PasswordInput(),
         required=False,
-    )
+        help_text='<ul>' + ''.join(f'<li>{text}</li>' for text in password_validators_help_texts()) + '</ul>')
     password_confirm = forms.CharField(
         widget=forms.PasswordInput(),
         required=False,
@@ -30,7 +29,7 @@ class AdminUserEditForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['username', 'password', 'password_confirm', 'email', 'first_name', 'last_name']
+        fields = ['username', 'password', 'password_confirm', 'email']
 
     def clean(self):
         cleaned_data = super().clean()

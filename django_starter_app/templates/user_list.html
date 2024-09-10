@@ -1,14 +1,13 @@
 <!-- templates/user_list.html -->
 {% extends 'layouts/base.html' %}
 
-{% block title %}User List{% endblock %}
+{% block title %}Lista utenti{% endblock %}
 
 {% block content %}
-
 <div class="container">
-    <h2>User List</h2>
-   <br>
-   <p><a href="{% url 'create_user' %}">Create user</a></p>
+    <h2>Lista utenti</h2>
+    <br>
+    <p><a href="{% url 'create_user' %}">Create user</a></p>
     <div class="card">
         <div class="card-body">
             <table class="table">
@@ -17,8 +16,6 @@
                         <th scope="col">ID</th>
                         <th scope="col">Username</th>
                         <th scope="col">E-mail</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Cognome</th>
                         <th scope="col"></th>
 
                     </tr>
@@ -29,9 +26,7 @@
                         <th scope="row">{{ user.pk }}</th>
                         <td>{{ user.username }}</td>
                         <td>{{ user.email }}</td>
-                        <td>{{ user.first_name }}</td>
-                        <td>{{ user.last_name }}</td>
-                        <td><a href="{% url 'edit_user' user.id %}">Edit</a></td>
+                        <td><a href="{% url 'edit_user' user.id %}">Modifica</a></td>
                     </tr>
                     {% endfor %}
 
@@ -42,7 +37,4 @@
         </div>
     </div>
 </div>
-
-
-
 {% endblock %}

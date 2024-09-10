@@ -1,4 +1,13 @@
 <!-- templates/edit_user.html -->
-{% block content %}
-{% include "layouts/form_card.html" with title="Edit user" button_label="Salva" %}
+{% extends "layouts/form_card.html" %}
+{% block title %}
+Modifica utente
+{% endblock %}
+
+{% block card_title %}
+Modifica utente
+{% endblock %}
+
+{% block button_label %}
+Salva
 {% endblock %}

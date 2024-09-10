@@ -2,21 +2,16 @@
 {% extends "layouts/base.html" %}
 {% load crispy_forms_tags %}
 
-{% block head_title %}
-{{ title }}
-{% endblock head_title %}
-
 {% block content %}
 <div class="container" style="max-width: 600px;">
     <div class="card">
         <div class="card-body">
-            <h2>{{ title }}</h2>
-            <p>{{ description }}</p>
+            <h2>{% block card_title %}{% endblock %}</h2>
             <form method="post">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="d-grid">
-                    <button class="btn btn-primary" type="submit">{{ button_label }}</button>
+                    <button class="btn btn-primary" type="submit">{% block button_label %}{% endblock %}</button>
                 </div>
             </form>
         </div>

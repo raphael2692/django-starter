@@ -1,5 +1,13 @@
 <!-- templates/create_user.html -->
+{% extends "layouts/form_card.html" %}
+{% block title %}
+Crea nuovo utente
+{% endblock %}
 
-{% block content %}
-{% include "layouts/form_card.html" with title="Create user" button_label="Salva" %}
+{% block card_title %}
+Crea nuovo utente
+{% endblock %}
+
+{% block button_label %}
+Salva
 {% endblock %}
