@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "django-starter"
+version = "0.1.0"
+description = ""
+authors = ["Raffaele Spataro"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.1.1"
+django-crispy-forms = "^2.3"
+crispy-bootstrap5 = "^2024.2"
+django-htmx = "^1.19.0"
+django-allauth = {extras = ["socialaccount"], version = "^64.2.1"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

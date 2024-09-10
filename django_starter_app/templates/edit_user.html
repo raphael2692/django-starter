@@ -1,18 +1,4 @@
 <!-- templates/edit_user.html -->
-
-{% extends 'base.html' %}
-{% load crispy_forms_tags %}
-{% block title %}Edit User{% endblock %}
-
 {% block content %}
-
-<div class="container">
-    <h2>Edit User</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form | crispy  }}
-        <button class="btn btn-primary" type="submit">Save</button>
-    </form>
-</div>
-
+{% include "layouts/form_card.html" with title="Edit user" button_label="Salva" %}
 {% endblock %}
